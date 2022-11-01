@@ -1,3 +1,11 @@
+import AboutVue from "@/views/About.vue";
+import ContactVue from "@/views/Contact.vue";
+import IndexVue from "@/views/Index.vue";
+import MyHomeVue from "@/views/MyHome.vue";
+import NotFoundVue from "@/views/NotFound.vue";
+import ServiceVue from "@/views/Service.vue";
+import SkillVue from "@/views/Skill.vue";
+import TestVue from "@/views/Test.vue";
 import {
   createRouter,
   createWebHistory,
@@ -7,51 +15,47 @@ import { ROUTER_NAME } from "./route.name";
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: "/404",
-    name: ROUTER_NAME.NOTFOUND,
-    component: () => import("@/views/NotFound.vue"),
-  },
-  {
     path: "/",
     name: ROUTER_NAME.ROOT,
-    component: () => import("@/views/Index.vue"),
+    component: IndexVue,
     children: [
       {
         path: "",
         name: ROUTER_NAME.HOME,
-        component: () => import("@/views/MyHome.vue"),
+        component: MyHomeVue,
       },
       {
         path: "/about",
         name: ROUTER_NAME.ABOUT,
-        component: () => import("@/views/About.vue"),
+        component: AboutVue,
       },
       {
         path: "/service",
         name: ROUTER_NAME.SERVICE,
-        component: () => import("@/views/Service.vue"),
+        component: ServiceVue,
       },
       {
         path: "/skill",
         name: ROUTER_NAME.SKILL,
-        component: () => import("@/views/Skill.vue"),
+        component: SkillVue,
       },
       {
         path: "/contact",
         name: ROUTER_NAME.CONTACT,
-        component: () => import("@/views/Contact.vue"),
+        component: ContactVue,
       },
       {
         path: "/test",
         name: ROUTER_NAME.TEST,
-        component: () => import("@/views/Test.vue"),
+        component: TestVue,
       },
     ],
   },
-  {
-    path: "/:pathMatch(.*)*",
-    redirect: "/404",
-  },
+  // {
+  //   path: "/:pathMatch(.*)*",
+  //   name: ROUTER_NAME.NOTFOUND,
+  //   component: NotFoundVue,
+  // },
 ];
 
 const router = createRouter({
