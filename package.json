@@ -5,6 +5,7 @@
     "dev": "vite --host",
     "build": "run-p type-check build-only",
     "preview": "vite preview --host --port 8080",
+    "depoly": "cd dist && copy index.html 404.html",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
