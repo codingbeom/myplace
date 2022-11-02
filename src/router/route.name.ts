@@ -1,5 +1,4 @@
 export const ROUTER_NAME = {
-  ROOT: "index",
   HOME: "home",
   ABOUT: "about",
   SERVICE: "service",
